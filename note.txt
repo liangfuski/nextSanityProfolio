@@ -1,0 +1,19 @@
+
+short hand to create a component template:
+    1. At extensions search and install "ES7+ React/Redux/React-Native snippets"
+    2. in the component file type "tfce"
+
+short hand to import thing
+    1. put down the component
+    2. type "ctrl space"
+
+install react-social-icons
+install framer motion
+install react-simple-typerwriter
+install heroicons
+install tailwind-scrollbar
+
+setting up sanity.io
+
+To do:
+checkout flex box
