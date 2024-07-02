@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Sanity 
 sanity build
 sanity start
+
+npm install next-sanity

@@ -20,6 +20,29 @@ export default defineType({
         }
     },
     {
+        name: "shouldCompanyImageRound",
+        title: "Should Company Image Round",
+        type: "boolean",
+    },
+    {
+        name: "projectClientImage",
+        title: "Client Image",
+        type: "image",
+        options: {
+            hotspot: true,
+        }
+    },
+    {
+        name: "shouldClientImageRound",
+        title: "Should Client Image Round",
+        type: "boolean",
+    },
+    {
+        name: "projectDescription",
+        title: "Project Description",
+        type: "text"
+    },
+    {
         name: "company",
         title: "Company",
         type: "text"

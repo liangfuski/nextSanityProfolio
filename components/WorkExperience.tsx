@@ -2,15 +2,13 @@
 import React, { Component } from 'react'
 import { motion } from "framer-motion"
 import ExperienceCard from "./ExperienceCard"
+import { Experience } from '@/typings'
 
-type Props = {}
+type Props = { 
+  experiences: Experience[]
+}
 
-type State = {}
-
-class WorkExperience extends Component<Props, State> {
-  state = {}
-
-  render() {
+function WorkExperience({ experiences }: Props){
     return (
       <motion.div 
         className="
@@ -24,18 +22,15 @@ class WorkExperience extends Component<Props, State> {
         transition={{ duration: 1.5 }}
         >
         <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl">EXPERIENCE</h3>
-
         {/* i added absolute top-24 */}
         <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
             scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-            <ExperienceCard/>
-            <ExperienceCard/>
-            <ExperienceCard/>
-            <ExperienceCard/>
+              {experiences?.map(experience => (
+                <ExperienceCard key={experience._id} experience={experience}/>
+              ))}
         </div>
       </motion.div>
     )
-  }
 }
 
 export default WorkExperience

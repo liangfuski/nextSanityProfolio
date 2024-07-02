@@ -7,8 +7,13 @@ import Skills from "../components/Skills"
 import Projects from "../components/Projects"
 import ContactMe from "@/components/ContactMe"
 import Link from "next/link"
+import { PageInfo, Experience, Skill, Project, Social} from "../typings"
+import { fetchData } from "@/utils/fetchData"
+import { use } from 'react';
 
-export default function Home() {
+const Home = () => {
+ 
+  const { pageInfo, experiences, topSkills, projects, socials } = use(fetchData());
   return (
     <div className="
       bg-[rgb(36,36,36)] 
@@ -16,31 +21,31 @@ export default function Home() {
       h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
       scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
-        <title>Fu's Portfolio</title>
+        <title>Fu&apos;s Portfolio</title>
       </Head>
       
-      <Header/>
+      <Header socials={socials}/>
       {/* Hero */}
       <section id="hero" className="snap-center">
-        <Hero/>
+        <Hero pageInfo={pageInfo}/>
       </section>
 
       {/* About */}
       <section id='about' className="snap-center">
-        <About/>
+        <About pageInfo={pageInfo}/>
       </section>
       {/* Experience */}
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences}/>
       </section>
       {/* Skills */}
       <section id="skills" className="snap-center">
-        <Skills/>
+        <Skills topSkills={topSkills}/>
       </section>
 
       {/* Projects */}
       <section id="projects" className="snap-center">
-        <Projects />
+        <Projects projects={projects}/>
       </section>
 
       <section id="contact" className="snap-start">
@@ -59,3 +64,9 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
+
+// how I fix vercel build issue
+// ref: https://github.com/vercel/next.js/issues/49578
+// export const runtime = "edge"

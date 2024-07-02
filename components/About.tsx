@@ -1,10 +1,14 @@
 "use client"
 import React from 'react'
 import { motion } from "framer-motion";
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div 
       initial={{ opacity:0 }}
@@ -38,15 +42,13 @@ function About({}: Props) {
           }}
           whileInView={{x:0, opacity:1}}
           viewport={{ once: true }}
-          src="https://liangfuski.s3.amazonaws.com/profile2.png"
+          src={urlFor(pageInfo?.profilePic).url()}
           className="mb-10 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover object-top md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]">
         </motion.img>
 
         <div className="space-y-10 px-0 md:px-10">
           <h4 className="text-4xl font-semibold">Here is a <span className="underline decoration-[#F7AB0A]/50">little</span> background</h4>
-          <p className="text-base">With over three years of experience in implementing web-based systems, complemented by an advanced program in artificial intelligence, I have honed my skills in applying DevOps/MLOps principles to cutting-edge AI projects.
-            Throughout my tech career, I have contributed to three large-scale enterprise projects across the financial, airline, and retail sectors, enriching my expertise in full-stack development, system design, cloud technologies, and CI/CD workflows. Two of these projects were data-driven AI systems, which inspired me to further my education in AI, acquiring advanced skills in machine learning, computer vision, big data, NLP, deep learning, LLM, and MLOps. My internship provided opportunities to solve industrial problems, applying both my experience and newfound knowledge.
-            I leveraged my skills and expertise in my award-winning capstone project, a yoga auto-training Android application. This success has motivated me to continue bringing innovative AI ideas to production-level products.</p>
+          <p className="text-base">{pageInfo.backgroundInformation}</p>
         </div>
     </motion.div>
   )

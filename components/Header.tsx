@@ -3,11 +3,15 @@ import React from 'react';
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion"
 import Link from 'next/link';
+import { Social } from '@/typings';
 
-type Props = {}
+type Props = {
+    socials: Social[]
+}
 
-function Header({}: Props) {
-  return (
+function Header({ socials }: Props) {
+  
+    return (
     // video 35:00 for snapping
     <header className="bg-[rgb(36,36,36)] sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center z-100">
         <motion.div 
@@ -26,24 +30,13 @@ function Header({}: Props) {
             }}
             className='flex flex-row items-center'>
             {/* Social Icons */}
-
-            <SocialIcon 
-                url="https://www.youtube.com/channel/UC6i0uWY2Sz49eepv7ZcLBxQ" 
-                fgColor="gray"
-                bgColor="transparent"
-            />
-
-            <SocialIcon 
-                url="https://www.linkedin.com/in/fu-liang-tony/" 
-                fgColor="gray"
-                bgColor="transparent"
-            />
-
-            <SocialIcon 
-                url="https://github.com/liangfuski" 
-                fgColor="gray"
-                bgColor="transparent"
-            />
+            {socials.map((social) => (
+                <SocialIcon 
+                    key={social._id} 
+                    fgColor="gray"
+                    bgColor="transparent"
+                    url={social.url}/>
+                ))}
         </motion.div>
         
             <motion.div 

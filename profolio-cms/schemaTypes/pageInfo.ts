@@ -13,14 +13,14 @@ export default defineType({
     {
       name: "role",
       title: "Role",
-      type: "image",
+      type: "string",
       options: {
         hotsport: true,
       }
     },
     {
       name: "heroImage",
-      title: "Image",
+      title: "HeroImage",
       type: "image",
       options: {
         hotspot: true
@@ -33,7 +33,7 @@ export default defineType({
     },
     {
       name: "profilePic",
-      title: "ProgilePic",
+      title: "ProfilePic",
       type: "image",
       options: {
         hotspot: true

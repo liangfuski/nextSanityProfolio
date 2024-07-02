@@ -2,10 +2,13 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import Skill from "./Skill"
+import { Skill as skill} from "../typings"
 
-type Props = {}
+type Props = {
+  topSkills: skill[]
+}
 
-const Skills = (props: Props) => {
+const Skills = ({topSkills}: Props) => {
   return (
     <motion.div 
         className="
@@ -29,22 +32,9 @@ const Skills = (props: Props) => {
           md:p-0 
           md:grid-cols-4 
           gap-5">
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
+            {topSkills.map((s,i) => (
+              <Skill key={i} skill={s}/>
+            ))}
         </div>
     </motion.div>
   )
