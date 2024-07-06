@@ -15,12 +15,12 @@ function About({ pageInfo }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        flex flex-col relative h-fit text-center max-w-7xl px-10 justify-center mx-auto items-center
+        flex flex-col relative text-center max-w-7xl px-10 justify-center mx-auto items-center
         pt-20
         pb-20
         md:pt-0
         md:pb-0
-        md:h-screen
+        h-screen
         md:text-left 
         md:flex-row ">
 
@@ -46,7 +46,10 @@ function About({ pageInfo }: Props) {
           className="mb-10 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover object-top md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]">
         </motion.img>
 
-        <div className="space-y-10 px-0 md:px-10">
+        <div className="space-y-10 px-0 md:px-10 
+          overflow-y-auto 
+          scrollbar-thin
+          scrollbar-track-black scrollbar-thumb-[#F7AB0A]/8">
           <h4 className="text-4xl font-semibold">Here is a <span className="underline decoration-[#F7AB0A]/50">little</span> background</h4>
           <p className="text-base">{pageInfo.backgroundInformation}</p>
         </div>
