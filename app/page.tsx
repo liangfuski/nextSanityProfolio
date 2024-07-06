@@ -13,7 +13,7 @@ import Projects from "../components/Projects"
 import ContactMe from "@/components/ContactMe"
 import Link from "next/link"
 
-export default async function Home () {
+export default async function Home (){
     const pageInfo = await getPageInfo();
     const experiences = await getExperience();
     const projects = await getProjects();
@@ -68,5 +68,5 @@ export default async function Home () {
             </footer>
         </Link>
         </div>
-    );
+    )
 }
