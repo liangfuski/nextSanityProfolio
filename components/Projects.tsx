@@ -19,14 +19,14 @@ const Projects = ({projects}: Props) => {
       className="
         box-border pt-30
         md:pt-0 h-screen relative flex overflow-hidden flex-col text-left md:flex-row
-        max-w-full justify-center mx-auto items-center z-20">
+        max-w-full justify-center mx-auto items-center">
         <h3 className="
           md:absolute 
           md:top-24 
           uppercase tracking-[20px] text-gray-500 text-2xl">
             Project</h3>
 
-        <div className="box-border md:py-10 md:py-0 relative w-full flex overflow-x-scroll snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+        <div className="box-border md:py-10 md:py-0 relative w-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             {projects.map((project, i) => (
               <Link key={i} href={project.linkToBuild}>
                 <div className={`w-screen flex-shrink-0 snap-center flex flex-col justify-start md:justify-center items-center space-y-5 px-10 pt-5 md:px-20 md:pt-40 md:h-[99vh]`}>

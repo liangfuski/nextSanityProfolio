@@ -18,7 +18,7 @@ const Skills = ({topSkills}: Props) => {
             xl:px-10 min-h-screen
             justify-start mx-auto items-center mx-auto
             md:justify-center
-            xl:space-y-0 xl:px-10"
+            xl:space-y-0 xl:px-10 z-0"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}>
