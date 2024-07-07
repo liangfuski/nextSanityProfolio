@@ -21,18 +21,17 @@ function ExperienceCard({experience}: Props) {
             border-box
             h-[64vh]
             md:h-[65vh]
-            p-5
-            flex flex-col rounded-lg items-center space-y-7 md:space-y-15 flex-shrink-0 
-            w-[80vw] md:w-[600px] xl:w-[900px] snap-center md:bg-[#292929] md:p-10 hover:opacity-100 opacity-40
+            flex flex-col rounded-lg items-center md:space-y-7 md:space-y-15 flex-shrink-0 
+            w-[80vw] md:w-[600px] xl:w-[900px] snap-center md:bg-[#292929] md:p-10 hover:opacity-100 md:opacity-40
             cursor-pointer transition-opacity duration-200
-            overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/8
+             hover:overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/8
             ">
         
-        <div className="flex flex-row justify-center items-center space-x-5" style={{flex:1}}>
+        <div className="flex flex-row justify-center items-center space-x-2 md:space-x-5" style={{flex:1}}>
             <div className='xl:h-[100px] flex flex-col justify-center'>
                 <motion.img
                     initial={{
-                        y: -50,
+                        y: -10,
                         opacity: 0,
                     }}
                     transition={{ duration: 1.2 }}
@@ -58,7 +57,7 @@ function ExperienceCard({experience}: Props) {
                 <div className=' xl:h-[100px] flex flex-col justify-center'>
                     <motion.img
                         initial={{
-                            y: -100,
+                            y: -10,
                             opacity: 0,
                         }}
                         transition={{ duration: 1.2 }}
@@ -94,7 +93,7 @@ function ExperienceCard({experience}: Props) {
                     : new Date(experience.dateEnded).toDateString()}
             </p>
 
-            <ul className="border-box list-disc space-y-3 text-lg px-10
+            <ul className="border-box list-disc space-y-3 text-lg md:px-10
             max-w-100" style={{flex:1}}>
             {/* <ul className="list-disc space-y-3 ml-5 text-lg"> */}
                 {

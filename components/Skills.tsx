@@ -30,9 +30,10 @@ const Skills = ({topSkills}: Props) => {
           grid 
           grid-cols-3
           p-10
+          md:p-10
           md:p-0 
           md:grid-cols-4 
-          gap-5">
+          md:gap-5">
             {topSkills.map((s,i) => (
               <Skill key={i} skill={s}/>
             ))}

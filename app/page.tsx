@@ -45,7 +45,7 @@ export default async function Home (){
             <WorkExperience experiences={experiences}/>
         </section>
         {/* Skills */}
-        <section id="skills" className="snap-center">
+        <section id="skills" className="snap-start">
             <Skills topSkills={topSkills!.skills}/>
         </section>
 

@@ -17,31 +17,29 @@ const Projects = ({projects}: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="
-        box-border pt-30
-        md:pt-0 h-screen relative flex overflow-hidden flex-col text-left md:flex-row
-        max-w-full justify-center mx-auto items-center">
+        box-border pt-[100px] pb-[100px] m-h-screen relative flex flex-col text-left 
+        max-w-full justify-start mx-auto items-center">
         <h3 className="
-          md:absolute 
-          md:top-24 
           uppercase tracking-[20px] text-gray-500 text-2xl">
             Project</h3>
 
-        <div className="box-border md:py-10 md:py-0 relative w-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+        <div className="box-border relative w-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             {projects.map((project, i) => (
-              <Link key={i} href={project.linkToBuild}>
-                <div className={`w-screen flex-shrink-0 snap-center flex flex-col justify-start md:justify-center items-center space-y-5 px-10 pt-5 md:px-20 md:pt-40 md:h-[99vh]`}>
-                  <motion.img 
-                    initial={{
-                      y: -100,
-                      opacity: 0
-                    }}
-                    transition={{ duration: 1.2 }}
-                    whileInView={{ opacity:1, y: 0 }}
-                    alt="ssGlobal" 
-                    src={urlFor(project?.image).url()} 
-                    className='w-1/1 lg:w-1/3'
-                    viewport={{once: true}} />
-                  <div className="space-y-10 px-0 md:py-10 max-w-6xl lg:w-1/3">
+                <div key={i} className={`w-screen flex-shrink-0 snap-center flex flex-col a justify-start md:justify-center items-center space-y-5 px-10 pt-5`}>
+                <Link href={project.linkToBuild} className="contents">
+                        <motion.img 
+                          initial={{
+                            y: -100,
+                            opacity: 0
+                          }}
+                          transition={{ duration: 1.2 }}
+                          whileInView={{ opacity:1, y: 0 }}
+                          alt="ssGlobal" 
+                          src={urlFor(project?.image).url()} 
+                          className='w-1/1 lg:w-1/3'
+                          viewport={{once: true}} />
+                    </Link>
+                  <div className="space-y-10 px-0 max-w-6xl lg:w-1/3">
                     <h4 className='text-3xl md:text-4xl font-semibold text-center'>
                         <span className="underline decoration-[#F7AB0A]/50">Project {i+1} of {projects.length}: </span>
                       {project?.title}
@@ -60,7 +58,6 @@ const Projects = ({projects}: Props) => {
                     </p>
                   </div>
                 </div>
-              </Link>
 
             ))}
         </div>

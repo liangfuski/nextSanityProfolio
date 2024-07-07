@@ -27,31 +27,33 @@ const ContactMe = (props: Props) => {
 
   return (
     <div 
-      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row
-        max-w-full justify-evenly mx-auto items-center z-20">
-          <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      className="
+        py-[100px] px-[20-px]
+        h-screen relative flex overflow-hidden flex-col text-left
+        max-w-full justify-evenly mx-auto items-center">
+      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl">
             contact me</h3>
         
-      <div className="flex flex-col space-y-10 px-10 pt-20">
+      <div className="flex flex-col space-y-5 md:space-y-10 md:px-10 md:pt-20">
           <h4 className="hidden md:block md:text-4xl md:font-semibold text-center">
             I have got just what you need.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">Let&apos;s Talk</span>
           </h4>       
 
-          <div className="space-y-10">
-            <div className="flex items-center justify-center space-x-5">
+          <div className="space-y-3 md:space-y-10">
+            <div className="flex items-center md:justify-center space-x-5">
               <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
-              <p className="text-2xl">+1(473)799-2147</p>
+              <p className="text-xl md:text-2xl">+1(473)799-2147</p>
             </div>
 
-            <div className="flex items-center justify-center space-x-5">
+            <div className="flex items-center md:justify-center space-x-5">
               <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
-              <p className="text-2xl">tony.f.liang@outlook.com</p>
+              <p className="text-xl md:text-2xl">tony.f.liang@outlook.com</p>
             </div>
 
-            <div className="flex items-center justify-center space-x-5">
+            <div className="flex items-center md:justify-center space-x-5">
               <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse"/>
-              <p className="text-2xl">Markham Canada</p>
+              <p className="text-xl md:text-2xl">Markham Canada</p>
             </div>
 
             <form 
