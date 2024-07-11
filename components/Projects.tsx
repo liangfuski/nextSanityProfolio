@@ -23,10 +23,10 @@ const Projects = ({projects}: Props) => {
           uppercase tracking-[20px] text-gray-500 text-2xl">
             Project</h3>
 
-        <div className="box-border relative w-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+        <div className="z-10 box-border relative w-full flex overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             {projects.map((project, i) => (
-                <div key={i} className={`w-screen flex-shrink-0 snap-center flex flex-col a justify-start md:justify-center items-center space-y-5 px-10 pt-5`}>
-                <Link href={project.linkToBuild} className="contents">
+                <div key={i} className={`w-screen flex-shrink-0 snap-center flex flex-col a justify-start md:justify-center items-center space-y-5 px-10 p-10`}>
+                    <Link href={project.linkToBuild} className="contents">
                         <motion.img 
                           initial={{
                             y: -100,
