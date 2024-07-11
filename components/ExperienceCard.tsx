@@ -27,7 +27,7 @@ function ExperienceCard({experience}: Props) {
              hover:overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/8
             ">
         
-        <div className="flex flex-row justify-center items-center space-x-2 md:space-x-5" style={{flex:1}}>
+        <div className="flex flex-row justify-center items-center space-x-2 md:space-x-5 min-h-[80px]" >
             <div className='xl:h-[100px] flex flex-col justify-center'>
                 <motion.img
                     initial={{
@@ -71,7 +71,7 @@ function ExperienceCard({experience}: Props) {
             }
         </div>
         
-        <div className="flex flex-col px-0 md:px-10 flex-shrink-0 space-y-3" style={{flex:5}}>
+        <div className="flex flex-col px-0 md:px-10 flex-shrink-0 space-y-3" >
             <h4 className="text-xl md:text-3xl font-light">{experience.jobTitle}</h4>
             <p className="text-md font-bold md:text-2xl mt-1">{experience.company} : {experience.projectDescription}</p>
             <div className="flex space-x-2 my-2">
